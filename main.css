@@ -7,28 +7,48 @@
 }
 
 :root {
-    --main-color : #121212 ;
-    --scound-color : #3b3b3b ;
-    --operator-color :  #FF8C00 ;
-    --btn-hover : #FFA733 ;
-    --btn-active : #FF6A00 ;
+    --back-ground : #191919 ;
+    --main-color :  #f9fbff ;
+
+    --screen : #EEE;
+    --screen-color : #111827 ;
+
+    --btn : #e4e9f2 ;
+    --btn-hover: #d6dde8;
+    --btn-active: #c8d1df;
+
+    --operator: #f59e0b;
+    --operator-hover : #e08e09 ;
+    --operator-active : #c97c07 ;
+    --operator-text: #ffffff;
+
+    --order : #9ca3af ;
+    --order-hover : #6b7280 ;
+    --order-active : #4b5563 ;
+
+    --special : #3b82f6 ;
+    --special-hover : #2563eb ;
+    --special-active : #1d4ed8 ;
+
+    --text: #1f2937;
 }
 
 header {
     width : 100% ;
     min-height: 100vh;
     max-height : fit-content ;
-    background-color : #EEE;
+    --back-ground: radial-gradient(circle at top, #2a2a2a 0%, #191919 60%, #111111 100%);
     display : flex ;
     justify-content: center;
     align-items: center;
 }
 
 .continar {
-    background-color: var(--main-color) ;
+    background-color:var(--main-color);
     width: 70%;
     height: fit-content ;
-    border: 2px solid var(--main-color) ;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
     border-radius: 18px ;
     -webkit-border-radius: 18px ;
     -moz-border-radius: 18px ;
@@ -38,26 +58,30 @@ header {
     overflow: hidden;
     grid-template-rows: 80px repeat(7,1fr);
     grid-template-columns: repeat(4,1fr) ;
-    gap : 10px;
-    grid-template-areas: "inp inp inp inp " 
-    "btn1 btn2 btn3 btn4" "btn5 btn6 btn7 btn8" "btn9 btn10 btn11 btn12" 
-    "btn13 btn14 btn15 btn16" "btn17 btn18 btn19 btn20" "special special special special";
+    gap: 10px;
+    grid-template-areas: "inp inp inp inp "  
+    "btn1 btn2 btn3 btn4" "btn5 btn6 btn7 btn8" 
+    "btn9 btn10 btn11 btn12" 
+    "btn13 btn14 btn15 btn16" 
+    "btn17 btn18 btn19 special" 
+    "btn21 btn22 btn20 special";
     justify-content: center;
-    box-shadow: 0px 0px 5px var(--main-color);
+    backdrop-filter: blur(6px);
 }
 
 .continar input {
-    display : grid ;
+    display: grid ;
     grid-area: inp;
     width: 100% ;
     padding: 12px 30px ;
-    border: 4px solid var(--main-color) ;
+    border: 2px solid var(--back-ground) ;
     border-radius: 12px ;
     -webkit-border-radius: 12px ;
     -moz-border-radius: 12px ;
     -ms-border-radius: 12px ;
     -o-border-radius: 12px ;
-    background-color: var(--scound-color);
+    background-color: var(--screen);
+    color : var(--screen-color) ;
     outline: none;
     font-size: 1.5rem;
     text-align: right;
@@ -141,59 +165,51 @@ header {
 .continar .btn18 {
     grid-area : btn18 ;
 }
+
 .continar .btn19 {
     grid-area : btn19 ;
 }
+
 .continar .btn20 {
     grid-area : btn20 ;
 }
+
+.continar .btn21 {
+    grid-area : btn21 ;
+}
+.continar .btn22 {
+    grid-area : btn22 ;
+}
+
 .continar .special {
     grid-area : special ;
 }
 
-
 .continar .btn button {
-    width: 60PX ;
+    width: 65PX ;
     height: 60PX;
-    background-color: var(--scound-color) ;
+    background-color: var(--btn);
+    color : var(--text);
     display: inline-flex ;
     justify-content: center;
     align-items: center;
-    border-radius: 50% ;
-    -webkit-border-radius: 50% ;
-    -moz-border-radius: 50% ;
-    -ms-border-radius: 50% ;
-    -o-border-radius: 50% ;
+    border-radius: 25% ;
+    -webkit-border-radius: 25% ;
+    -moz-border-radius: 25% ;
+    -ms-border-radius: 25% ;
+    -o-border-radius: 25% ;
     font-weight: bolder;
     font-size: 1.5rem;
-    box-shadow: 0px 0px 5px var(--scound-color);
+    box-shadow: 0px 0px 5px ;
 } 
-
-.continar .special button {
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    width : 100% ;
-    border : 5px solid var(--main-color) ;
-}
-
-.continar .operator button {
-    background-color : var(--operator-color);
-}
-
-.continar .order button {
-    background-color: #2C2C2C;
-}
 
 .continar .btn button:hover {
     cursor: pointer;
-    background-color: #2C2C2C;
+    background-color: var(--btn-hover) ;
 }
 
 .continar .btn button:active {
-    background-color: #3A3A3A ;
+    background-color:  var(--btn-active) ;
     transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -moz-transform: scale(0.95);
@@ -202,12 +218,17 @@ header {
     font-size: large;
 }
 
+.continar .operator button {
+    background-color : var(--operator) ;
+    color: var(--operator-text)
+}
+
 .continar .operator button:hover {
-    background-color : var(--btn-hover);
+    background-color : var(--operator-hover) ;
 }
 
 .continar .operator button:active {
-    background-color:  #FF6A00;
+    background-color: var(--operator-active) ;
     transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -moz-transform: scale(0.95);
@@ -216,12 +237,43 @@ header {
     font-size: large;
 }
 
+.continar .order button {
+    background-color: var(--order)  ;
+    color : var(--operator-text) ;
+}
+
 .continar .order button:hover {
-    background-color: #3A3A3A;
+    background-color: var(--order-hover) ;
 }
 
 .continar .order button:active {
-    background: #4A4A4A;
+    background: var(--order-active) ;
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    font-size: large;
+}
+
+.continar .special button {
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    height : 100% ;
+    width : 65px ;
+    border : 2px solid var(--text) ;
+    background-color : var(--special) ;
+}
+
+.continar .special button:hover {
+background-color: var(--special-hover);
+}
+
+.continar .special button:active {
+    background: var(--special-active) ;
     transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -moz-transform: scale(0.95);
@@ -234,8 +286,12 @@ header {
     .continar {
         width : 80%;
         height : fit-content ;
-        grid-template-columns: repeat(4,1fr);
-        grid-template-rows: 80px repeat(6 , 1fr);
+        grid-template-rows: 80px repeat(7,1fr);
+        grid-template-columns: repeat(4,1fr) ;
+    }
+
+    .continar .special button {
+        height : 100%;
     }
 }
 
@@ -243,17 +299,21 @@ header {
     .continar {
         width : 60%;
         height : fit-content ;
-        grid-template-columns: repeat(4,1fr);
-        grid-template-rows: 100px repeat(6 , 1fr);
+        grid-template-rows: 100px repeat(7,1fr);
+        grid-template-columns: repeat(4,1fr) ;
+    }
+
+    .continar .special button {
+        height : 100%;
     }
 }
 
 @media (min-width : 767px) and (max-width : 991px) {
     .continar {
-        width : 55%;
+        width : 45%;
         height : fit-content;
-        grid-template-columns: repeat(4,1fr);
-        grid-template-rows: 100px repeat(6 , 1fr);
+        grid-template-rows: 110px repeat(7,1fr);
+        grid-template-columns: repeat(4,1fr) ;
     }
 
     .continar .btn button {
@@ -262,24 +322,17 @@ header {
     }
 
     .continar .special button {
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    width : 100% ;
-    border : 5px solid var(--main-color) ;
+        height : 100%;
     }
-
 }
 
 @media (min-width : 992px) and (max-width : 1279px) {
     .continar {
-        width : 50%;
+        width : 40%;
         height : fit-content;
         gap : 20px ;
-        grid-template-columns: repeat(4,1fr);
-        grid-template-rows: 100px repeat(6 , 1fr);
+        grid-template-rows: 120px repeat(7,1fr);
+        grid-template-columns: repeat(4,1fr) ;
     }
 
     .continar .btn button {
@@ -288,41 +341,25 @@ header {
     }
 
     .continar .special button {
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    width : 100% ;
-    border : 5px solid var(--main-color) ;
+        height : 100%;
     }
 }
 
 @media (min-width : 1280px) {
     .continar {
-        width : 50%;
+        width : 35%;
         height : fit-content;
         gap : 20px ;
-        grid-template-columns: repeat(4,1fr);
-        grid-template-rows: 120px repeat(6 , 1fr);
+        grid-template-rows: 120px repeat(7,1fr);
+        grid-template-columns: repeat(4,1fr) ;
     }
 
     .continar .btn button {
-        width : 70px ;
-        height : 70px ;
+        width : 60px ;
+        height : 60px ;
     }
 
     .continar .special button {
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    width : 100% ;
-    border : 5px solid var(--main-color) ;
-    }
-
-    .continar input {
-        height : 90px ;
+        height : 100%;
     }
 }
