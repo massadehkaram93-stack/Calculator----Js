@@ -330,7 +330,7 @@ background-color: var(--special-hover);
 
 @media (min-width : 992px) and (max-width : 1279px) {
     .continar {
-        width : 45%;
+        width : 40%;
         height : fit-content;
         gap : 20px ;
         grid-template-rows: 100px repeat(7,1fr);
@@ -344,7 +344,7 @@ background-color: var(--special-hover);
 
 @media (min-width : 1280px) {
     .continar {
-        width : 35%;
+        width : 30%;
         height : fit-content;
         gap : 20px ;
         grid-template-rows: 110px repeat(7,1fr);
