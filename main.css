@@ -306,19 +306,24 @@ background-color: var(--special-hover);
     .continar .special button {
         height : 100%;
     }
+
+    .continar .btn button {
+        width : 65px ;
+        height : 60px ;
+    }
 }
 
 @media (min-width : 767px) and (max-width : 991px) {
     .continar {
-        width : 45%;
+        width : 60%;
         height : fit-content;
         grid-template-rows: 110px repeat(7,1fr);
         grid-template-columns: repeat(4,1fr) ;
     }
 
     .continar .btn button {
-        width : 60px ;
-        height : 60px ;
+        width : 70px ;
+        height : 65px ;
     }
 
     .continar .special button {
@@ -328,7 +333,7 @@ background-color: var(--special-hover);
 
 @media (min-width : 992px) and (max-width : 1279px) {
     .continar {
-        width : 40%;
+        width : 45%;
         height : fit-content;
         gap : 20px ;
         grid-template-rows: 120px repeat(7,1fr);
@@ -336,8 +341,8 @@ background-color: var(--special-hover);
     }
 
     .continar .btn button {
-        width : 60px ;
-        height : 60px ;
+        width : 75px ;
+        height : 70px ;
     }
 
     .continar .special button {
@@ -355,8 +360,8 @@ background-color: var(--special-hover);
     }
 
     .continar .btn button {
-        width : 60px ;
-        height : 60px ;
+        width : 80px ;
+        height : 75px ;
     }
 
     .continar .special button {
