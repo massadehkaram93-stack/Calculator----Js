@@ -53,7 +53,7 @@ function calc3 (text = "") {
                 Elements.push(currentNumber);
                 currentNumber = "";
             }
-        }   else if (text[i] === "(" || text[i] === "*" || text[i] === "/" || 
+        }   else if (text[i] === "(" || text[i] === "×" || text[i] === "÷" || 
             text[i] === "+" || text[i] === "-") {
             if (text[i] === "(") {
                 tempFirstIndex = i ;
@@ -75,7 +75,7 @@ function calc3 (text = "") {
                             Elements.push(")");
                             currentNumber = "";
                         }
-                    }  else if (text[r] === "*" || text[r] === "/" || 
+                    }  else if (text[r] === "×" || text[r] === "÷" || 
                         text[r] === "+" || text[r] === "-") {
                             Elements.push(currentNumber);
                             Elements.push(text[r]);
@@ -117,7 +117,7 @@ function calc3 (text = "") {
                     }
                 }
                 break;
-            }   else if (Elements[x + 1] === "/" || Elements[x + 1] === "*") {            
+            }   else if (Elements[x + 1] === "÷" || Elements[x + 1] === "×") {            
                 let ontherOp = true ;
 
                 for (let i = 0 ; i < Elements.length ; i++) {
@@ -128,7 +128,7 @@ function calc3 (text = "") {
                 }                
                 
                 if (ontherOp) {
-                    if (Elements[x + 1] === "*" || Elements[x + 1] === "/") {
+                    if (Elements[x + 1] === "×" || Elements[x + 1] === "÷") {
                         firstIndex = x ;
                     } 
 
@@ -145,7 +145,7 @@ function calc3 (text = "") {
                 let ontherOp = true ;
 
                 for (let i = 0 ; i < Elements.length ; i++) {
-                    if (Elements[i + 1] === "*" || Elements[i + 1] === "/" || Elements[i] === "(") {
+                    if (Elements[i + 1] === "×" || Elements[i + 1] === "÷" || Elements[i] === "(") {
                         ontherOp = false ;
                         break;
                     }
@@ -178,10 +178,10 @@ function calc3 (text = "") {
         }
 
         switch (temprorary.operator) {
-            case "*" :
+            case "×" :
                 result = temprorary.num1 * temprorary.num2 ;
                 break;
-            case "/" :
+            case "÷" :
                 result = temprorary.num1 / temprorary.num2 ;
                 break;
             case "+" :
